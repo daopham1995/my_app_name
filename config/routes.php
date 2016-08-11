@@ -41,6 +41,10 @@ use Cake\Routing\Router;
  *
  */
 Router::defaultRouteClass('DashedRoute');
+Router::scope('/bookmarks', ['controller' => 'Bookmarks'],
+    function ($routes) {
+        $routes->connect('/tagged/', ['action' => 'tags']);
+    });
 
 Router::scope('/', function (RouteBuilder $routes) {
     /**
